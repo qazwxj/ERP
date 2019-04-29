@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-客户关系</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body onload="load()">
+<div class="procur_box">
+    <div class="procur_main">
+        <dl class="first-line">
+            <dd style="margin:0px 0 70px 0px;">
+                <a lay-href="">
+                    <img src="../../img/K_system/K_handover.png" alt="客户移交">
+                    <span>客户移交</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:-68px;top: 88px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(270deg);">
+            </dd>
+            <dd style="margin:0px 0 0px 305px;">
+                <a lay-href="">
+                    <img src="../../img/K_system/K_offer.png" alt="销售报价">
+                    <span>销售报价</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:380px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(90deg);">
+            </dd>
+        </dl>
+        <dl class="second-line">
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/K_system/K_customer.png" alt="客户">
+                    <span>客户</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/K_system/K_contact.png" alt="联系人">
+                    <span>联系人</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/K_system/K_followup.png" alt="客户跟进">
+                    <span>客户跟进</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow">
+                <img src="../../img/ouyt.png" alt="箭头">
+            </dd>
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/K_system/K_feedback.png" alt="售后反馈">
+                    <span>售后反馈</span>
+                </a>
+            </dd>
+        </dl>
+    </div>
+    <!-- 右边的报表中心 -->
+    <div class="procur_right" id="procur_right">
+        <div class="layui-card">
+            <div class="layui-card-header">报表中心</div>
+            <div class="layui-card-body">
+                <dl>
+                    <dd data-name="customer">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span></span>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 底部的基本资料 -->
+    <ul class="procur_footer">
+        <!-- <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_customer.png" alt="客户资料">
+                <span>客户资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/P_category.png" alt="货品类别">
+                <span>货品类别</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/G_system/G_series.png" alt="系列资料">
+                <span>系列资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_brand.png" alt="品牌资料">
+                <span>品牌资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/goods_data.png" alt="货品资料">
+                <span>货品资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/method.png" alt="结算方式">
+                <span>结算方式</span>
+            </a>
+        </li> -->
+    </ul>
+</div>
+<script src="../../../layuiadmin/layui/layui.js?t=1"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index']);
+</script>
+</body>
+</html>

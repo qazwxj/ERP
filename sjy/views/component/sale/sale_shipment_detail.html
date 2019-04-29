@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-销售出货明细表</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<!-- 查询框 -->
+<div class="layui-form layui-anim layui-anim-fadein layui-anim-upbit" lay-filter="search-form" id="search-form">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <div class="layui-form-label">起始日期</div>
+            <div class="layui-input-inline">
+                <input type="text" name="start_date" id="search-form-date" lay-verify="start_date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">终止日期</div>
+            <div class="layui-input-inline">
+                <input type="text" name="end_date" id="search-form-date1" lay-verify="end_date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">单号</div>
+            <div class="layui-input-inline">
+                <input type="text" name="num" lay-verify="num"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">客户</div>
+            <div class="layui-input-inline">
+                <input type="text" name="customer" lay-verify="customer"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">业务员</div>
+            <div class="layui-input-inline">
+                <input type="text" name="salesman" lay-verify="salesman"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">货品名称</div>
+            <div class="layui-input-inline">
+                <input type="text" name="name" lay-verify="name"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">货品编码</div>
+            <div class="layui-input-inline">
+                <input type="text" name="code" lay-verify="code"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">品牌</div>
+            <div class="layui-input-inline">
+                <input type="text" name="brand" lay-verify="brand"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">规格</div>
+            <div class="layui-input-inline">
+                <input type="text" name="specifications" lay-verify="specifications"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">部门</div>
+            <div class="layui-input-inline">
+                <input type="text" name="department" lay-verify="department"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">到货日期</div>
+            <div class="layui-input-inline">
+                <input type="text" name="arrival_date" id="search-form-date2" lay-verify="arrival_date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">制单人</div>
+            <div class="layui-input-inline">
+                <input type="text" name="single" lay-verify="single"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-label">审核状态</div>
+            <div class="layui-input-inline">
+                <select name="examine" lay-verify="examine">
+                    <option value=""></option>
+                    <option value="">未审核</option>
+                    <option value="">已审核</option>
+                </select> 
+            </div>
+        </div>
+    </div>
+    <div class="search-btn">
+        <button class="layui-btn">查询</button>
+        <button class="layui-btn layui-btn-normal">清空</button>
+    </div>
+</div>
+<div class="layui-fluid" id="module">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 layui-col-sm12">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <div class="layui-form" lay-filter="select" style="display:inline-block;">
+                        <div class="layui-form-item">
+                            <select name="order" lay-verify="order">
+                                <option value="">按客户统计</option>
+                                <option value="">按货品统计</option>
+                                <option value="">按分支机构统计</option>
+                                <option value="">按品牌统计</option>
+                                <option value="">按业务员统计</option>
+                                <option value="">按仓库统计</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="layui-btn-container">
+                        <button class="layui-btn">导出</button> 
+                        <button class="layui-btn layui-btn-normal">打印</button>  
+                        <button class="layui-btn layui-btn-normal" id="search_btn">
+                            <i class="layui-icon layui-icon-search" style="font-size: 14px; color: #fff;"></i>查询
+                        </button>   
+                        <button class="layui-btn">
+                            <i class="layui-icon layui-icon-refresh" style="font-size: 14px; color: #fff;"></i>刷新
+                        </button>  
+                    </div>
+                </div>
+                <div class="layui-card-body" id="dif_body">
+                    <table class="layui-hide" id="test-table-checkbox" lay-even></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../layuiadmin/layui/layui.js"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','form','table','laydate'],function(){
+        var form=layui.form;
+        var table=layui.table;
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+        elem: '#search-form-date'
+        });
+        laydate.render({
+        elem: '#search-form-date1'
+        });
+        laydate.render({
+        elem: '#search-form-date2'
+        });
+        table.render({
+            elem: '#test-table-checkbox',
+            height: 312,
+            url: '/demo/table/user/', //数据接口
+            //page: true, //开启分页
+            cellMinWidth: 120, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            cols: [[ //表头
+                {type:'numbers', fixed: 'left'},
+                {type: 'checkbox', fixed: 'left'},
+                {field:'code', title: '开单日期'},
+                {field: 'shipmentno', title: '出货单号'},
+                {field: 'name', title: '销售单号'},
+                {field:'subordinate', title: '状态'},
+                {field: 'customer_num', title: '客户编号'},
+                {field: 'customer_name', title: '客户名称'},
+                {field: 'warehouse', title: '仓库'} ,
+                {field: 'establish', title: '货品编号'},
+                {field: 'modifier', title: '货品名称'},
+                {field: 'modify', title: '规格'},
+                {field:'code', title: '品牌'},
+                {field: 'color_num', title: '色号'},
+                {field:'color', title: '颜色'},
+                {field:'batch_number', title: '批号'},
+                {field: 'founder', title: '单位'} ,
+                {field: 'number', title: '数量'},
+                {field: 'price', title: '单价'},
+                {field: 'sum', title: '金额'},
+                {field: 'shipment_num', title: '已出货数量'},
+                {field: 'remark', title: '备注'},
+                {field: 'abstract', title: '摘要'},
+                {field:'subordinate', title: '联系人'},
+                {field: 'founder', title: '联系电话'} ,
+                {field: 'establish', title: '结算方式'},
+                {field: 'modifier', title: '币种'},
+                {field: 'modify', title: '运输方式'},
+                {field: 'modify', title: '物流公司'},
+                {field:'code', title: '制单机构'},
+                {field: 'name', title: '部门'},
+                {field:'subordinate', title: '业务员'},
+                {field: 'founder', title: '审核人'} ,
+                {field: 'establish', title: '创建人'},
+                {field: 'modifier', title: '创建日期'},
+                {field: 'modifier', title: '修改人'},
+                {field: 'modify', title: '修改日期'},
+            ]]
+        });
+    });
+</script>
+</body>
+</html>

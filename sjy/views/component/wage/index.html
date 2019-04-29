@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-工资系统</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body onload="load()">
+<div class="procur_box">
+    <div class="procur_main">
+        <dl class="first-line" style="width:320px;margin:0 auto;">
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/G_system/G_data.jpg" alt="工资数据">
+                    <span>工资数据</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:0px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(0deg);">
+            </dd>
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/G_system/G_pay.png" alt="工资支付">
+                    <span>工资支付</span>
+                </a>
+            </dd>
+        </dl>
+        <dl class="second-line">
+            <dd class="procur_arrow" style="position:relative;left:195px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(270deg);">
+            </dd>
+            <dd style="margin:70px 0 0 120px;">
+                <a lay-href="">
+                    <img src="../../img/G_system/G_piecerate.png" alt="计时工资">
+                    <span>计时工资</span>
+                </a>
+            </dd>
+        </dl>
+    </div>
+    <!-- 右边的报表中心 -->
+    <div class="procur_right" id="procur_right">
+        <div class="layui-card">
+            <div class="layui-card-header">报表中心</div>
+            <div class="layui-card-body">
+                <dl>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>工资表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>工资条</span>
+                        </a>
+                    </dd>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>费用支付明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i>  
+                            <span>费用支付汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>账户余额明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="sale">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>账户余额汇总表</span>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 底部的基本资料 -->
+    <ul class="procur_footer">
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/G_system/G_empdata.png" alt="员工资料">
+                <span>员工资料</span>
+            </a>
+        </li>
+        <!-- <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/P_category.png" alt="货品类别">
+                <span>货品类别</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/G_system/G_series.png" alt="系列资料">
+                <span>系列资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_brand.png" alt="品牌资料">
+                <span>品牌资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/goods_data.png" alt="货品资料">
+                <span>货品资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/method.png" alt="结算方式">
+                <span>结算方式</span>
+            </a>
+        </li> -->
+    </ul>
+</div>
+<script src="../../../layuiadmin/layui/layui.js?t=1"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index']);
+</script>
+</body>
+</html>

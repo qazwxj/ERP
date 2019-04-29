@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-应收应付</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body onload="load()">
+<div class="procur_box">
+    <div class="procur_main">
+        <dl class="first-line" style="width:80px;margin:0 auto;">
+            <dd>
+                <a lay-href="">
+                    <img src="../../img/A_system/A_contacts.png" alt="往来账核销">
+                    <span>往来账核销</span>
+                </a>
+            </dd>
+        </dl>
+        <dl class="second-line" style="width:320px;margin:0 auto;">
+            <dd>
+                <a lay-href="component/accrued/payment_form.html">
+                    <img src="../../img/A_system/A_payment.png" alt="付款单">
+                    <span>付款单</span>
+                </a>
+            </dd>
+            <dd style="margin-left: 160px;">
+                <a lay-href="component/accrued/receipt.html">
+                    <img src="../../img/A_system/A_collection.png" alt="首款单">
+                    <span>收款单</span>
+                </a>
+            </dd>
+        </dl>
+    </div>
+    <!-- 右边的报表中心 -->
+    <div class="procur_right" id="procur_right">
+        <div class="layui-card">
+            <div class="layui-card-header">报表中心</div>
+            <div class="layui-card-body">
+                <dl>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>应收账款明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>应收帐款汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>应付账款明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>应付帐款汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>收款单明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>收款单汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>付款单明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i>  
+                            <span>付款单汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i>  
+                            <span>成本核算明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="accrued">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>成本核算汇总表</span>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 底部的基本资料 -->
+    <ul class="procur_footer">
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_customer.png" alt="客户资料">
+                <span>客户资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/supplier.png" alt="供应商资料">
+                <span>供应商资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/A_system/A_cashier.png" alt="出纳账户">
+                <span>出纳账户</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/method.png" alt="结算方式">
+                <span>结算方式</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="../../../layuiadmin/layui/layui.js?t=1"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index']);
+</script>
+</body>
+</html>

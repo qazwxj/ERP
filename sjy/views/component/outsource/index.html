@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-委外加工</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body onload="load()">
+<div class="procur_box">
+    <div class="procur_main">
+        <dl class="first-line">
+            <dd style="margin:0px 0 70px 0px;">
+                <a lay-href="component/outsource/out_production.html">
+                    <img src="../../img/C_system/C_prodplan.png" alt="生产计划">
+                    <span>生产计划</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:-68px;top: 88px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(90deg);">
+            </dd>
+            <dd style="margin:0px 0 0px 328px;">
+                <a lay-href="">
+                    <img src="../../img/C_system/C_account.png" alt="加工成本核算">
+                    <span>加工成本核算</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:406px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(270deg);">
+            </dd>
+        </dl>
+        <dl class="second-line">
+            <dd>
+                <a lay-href="component/outsource/outs_process.html">
+                    <img src="../../img/C_system/C_process.png" alt="委外加工单">
+                    <span>委外加工单</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="component/outsource/outs_picking.html">
+                    <img src="../../img/C_system/C_picking.png" alt="委外领料">
+                    <span>委外领料</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="component/outsource/outs_check.html">
+                    <img src="../../img/C_system/C_finished.png" alt="委外验收">
+                    <span>委外验收</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="component/outsource/out_charge.html">
+                    <img src="../../img/C_system/C_cost.png" alt="加工成本核算">
+                    <span>加工成本核算</span>
+                </a>
+            </dd>
+        </dl>
+    </div>
+    <!-- 右边的报表中心 -->
+    <div class="procur_right" id="procur_right">
+        <div class="layui-card">
+            <div class="layui-card-header">报表中心</div>
+            <div class="layui-card-body">
+                <dl>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外加工进度表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外加工单明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外加工单汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外领料明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外领料汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外验收明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>委外验收汇总表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>加工费用明细表</span>
+                        </a>
+                    </dd>
+                    <dd data-name="outsource">
+                        <a lay-href="">
+                            <i class="layui-icon layui-icon-log" style="font-size: 20px; color: #c32620;position: relative;top:2px;margin: 0 2px 0 4px;"></i> 
+                            <span>加工费用汇总表</span>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 底部的基本资料 -->
+    <ul class="procur_footer">
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/supplier.png" alt="供应商资料">
+                <span>供应商资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/H_system/H_bom.png" alt="物料清单">
+                <span>物料清单</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/D_system/D_proflow.png" alt="工艺流程">
+                <span>工艺流程</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/P_category.png" alt="货品类别">
+                <span>货品类别</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/G_system/G_series.png" alt="系列资料">
+                <span>系列资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_brand.png" alt="品牌资料">
+                <span>品牌资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/goods_data.png" alt="货品资料">
+                <span>货品资料</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="../../../layuiadmin/layui/layui.js?t=1"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index']);
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-销售系统</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body onload="load()" style="background:url(../../img/bg.jpg);">
+<div class="procur_box">
+    <div class="procur_main">
+        <dl class="first-line">
+            <dd>
+                <a lay-href="component/sale/sales_quotation.html">
+                    <img src="../../img/s_system/S_plan.png" alt="销售报价">
+                    <span>销售报价</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="component/sale/sale_order_detail.html">
+                    <img src="../../img/s_system/S_order.png" alt="销售订单">
+                    <span>销售订单</span>
+                </a>
+            </dd>
+            <dd class="procur_grey"></dd>
+            <dd>
+                <a lay-href="component/sale/sale_shipment.html">
+                    <img src="../../img/s_system/S_shipment.png" alt="销售出货">
+                    <span>销售出货</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow">
+                <img src="../../img/ouyt.png" alt="箭头">
+            </dd>
+            <dd>
+                <a lay-href="component/sale/sale_recon.html">
+                    <img src="../../img/s_system/S_sale.png" alt="销售开票">
+                    <span>销售开票</span>
+                </a>
+            </dd>
+        </dl>
+        <dl class="second-line">
+            <dd class="procur_arrow" style="position:relative;left:160px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(270deg);">
+            </dd>
+            <dd style="margin:70px 0 0 100px;">
+                <a lay-href="component/sale/sale_change.html">
+                    <img src="../../img/P_system/P_money.png" alt="订单变更">
+                    <span>订单变更</span>
+                </a>
+            </dd>
+            <dd class="procur_arrow" style="position:relative;left:75px;">
+                <img src="../../img/ouyt.png" alt="箭头" style="transform:rotate(270deg);">
+            </dd>
+            <dd style="margin:70px 0 0 0px;">
+                <a lay-href="component/sale/sale_return.html">
+                    <img src="../../img/s_system/S_return.png" alt="销售退货">
+                    <span>销售退货</span>
+                </a>
+            </dd>
+        </dl>
+    </div>
+    <!-- 右边的报表中心 -->
+    <div class="procur_right" id="procur_right">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item">
+                <a href="javascript:;" style="text-align:center;">
+                    <i class="layui-icon layui-icon-form"></i>
+                    <cite>报表中心</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">销售订单进度表</a></dd>
+                    <!-- <dd>
+                        <a lay-href="component/sale/sale_order_detail.html">销售订单明细表</a>
+                    </dd> -->
+                    <dd><a href="">销售订单汇总表</a></dd>
+                    <dd>
+                        <a lay-href="component/sale/sale_shipment_detail.html">销售出货明细表</a>
+                    </dd>
+                    <dd><a href="">销售出货汇总表</a></dd>
+                    <dd>
+                        <a lay-href="component/sale/sale_return_detail.html">销售退货明细表</a>
+                    </dd>
+                    <dd><a href="">销售退货汇总表</a></dd>
+                    <dd>
+                        <a lay-href="component/sale/sale_recon_detail.html">销售对账明细表</a>
+                    </dd>
+                    <dd><a href="">销售对账汇总表</a></dd>
+                    <dd><a href="">销售利润明细表</a></dd>
+                    <dd><a href="">销售利润汇总表</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <!-- 底部的基本资料 -->
+    <ul class="procur_footer">
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_customer.png" alt="客户资料">
+                <span>客户资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/P_category.png" alt="货品类别">
+                <span>货品类别</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/G_system/G_series.png" alt="系列资料">
+                <span>系列资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/S_system/S_brand.png" alt="品牌资料">
+                <span>品牌资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/goods_data.png" alt="货品资料">
+                <span>货品资料</span>
+            </a>
+        </li>
+        <li class="item">
+            <a layu-href="">
+                <img src="../../img/P_system/method.png" alt="结算方式">
+                <span>结算方式</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="../../../layuiadmin/layui/layui.js?t=1"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index']);
+</script>
+</body>
+</html>

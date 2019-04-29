@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上吉佑皮革有限公司-销售订单</title>
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body style="overflow-y:hidden;">
+<div class="layui-fluid" id="module">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 layui-col-sm12" id="master_table">
+            <div class="layui-card" style="margin-bottom:0;">
+                <div class="layui-card-header">
+                    <div class="layui-btn-container layui-hide-sm layui-show-md-inline-block layui-col-md4" style="position:relative;">
+                        <button class="layui-btn btn" id="operate">操作</button>
+                        <dl class="child layui-anim-fadein layui-anim layui-anim-upbit">
+                            <dd>
+                                <a href="javascript:;">新增</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">复制</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">删除</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">结案</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">选择请购单</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">选择销售出货</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">生成销售订单</a>
+                            </dd>
+                        </dl>
+                        <button class="layui-btn layui-btn-normal">过程</button>
+                        <button class="layui-btn">审批</button>
+                        <button class="layui-btn layui-btn-normal">打印</button>
+                    </div>
+                    <!-- 小屏幕下让"操作"，"打印"等按钮隐藏，用个图标来代替 -->
+                    <div class="layui-icon layadmin-tabs-control layui-icon-down layui-hide-md layui-col-sm1" style="float:left;position: relative;text-align: center;">
+                        <ul class="layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav" style="position:absolute;left: 0;top: 0;width: 100%;height: 100%;">
+                            <li class="layui-nav-item" lay-unselect="">
+                                <a href="javascript:;" id="btn_more" class="btn" style="padding:0 20px;display:block;height:40px;">
+                                    <span class="layui-nav-more"></span>
+                                </a>
+                                <dl class="layui-nav-child childs layui-anim-fadein layui-anim layui-anim-upbit" style="top:42px;font-size: 12px;">
+                                    <dd class="operate1">
+                                        <a href="javascript:;">操作</a>
+                                        <dl class="dif_child layui-anim-fadein layui-anim layui-anim-upbit" style="left:64px;top:-6px;">
+                                            <dd>
+                                                <a href="javascript:;">新增</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">复制</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">删除</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">结案</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">选择请购单</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">选择销售出货</a>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;">生成销售订单</a>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd><a href="javascript:;">过程</a></dd>
+                                    <dd><a href="javascript:;">审核</a></dd>
+                                    <dd><a href="javascript:;">打印</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2 class="title layui-col-md2 layui-col-sm4" style="text-align:center;">销售订单</h2>
+                    <div class="inputbar layui-col-md6 layui-col-sm7" style="text-align: right;">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:30px;">日期</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="date" id="LAY-component-form-group-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:30px;">单号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="odd_num"  lay-verify="odd_num"  autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-body" style="width:95%;overflow:auto;padding-right: 20px;">
+                    <div class="layui-form" lay-filter="component-form-group">
+                        <div class="layui-form-item" style="margin-bottom:0;white-space:nowrap;">
+                            <div class="layui-inline">
+                                <div class="layui-form-label">订单类型</div>
+                                <div class="layui-input-inline">
+                                    <select name="order" lay-filter="order" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">客户订单号</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="order_num" lay-verify="order_num" autocomplete="off"  class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">出货日期</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="shipping_date" id="LAY-component-form-group-date1" lay-verify="shipping_date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">发票类型</div>
+                                <div class="layui-input-inline">
+                                    <select name="invoice" lay-filter="invoice" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">整单中止</div>
+                                <div class="layui-input-inline">
+                                    <input type="checkbox" name="" title="" lay-skin="primary">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-bottom:0;white-space:nowrap;">
+                            <div class="layui-inline">
+                                <div class="layui-form-label">客户</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="customer" lay-verify="customer" autocomplete="off"  class="layui-input input" data-type="customer">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">联系人</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="contacts" lay-verify="contacts" autocomplete="off"  class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">联系电话</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="tel" lay-verify="tel" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">运输方式</div>
+                                <div class="layui-input-inline">
+                                    <select name="transform" lay-filter="transform" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">物流公司</div>
+                                <div class="layui-input-inline">
+                                    <select name="suspension" lay-filter="suspension" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-bottom:0;white-space:nowrap;">
+                            <div class="layui-inline">
+                                <div class="layui-form-label">预收金额</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="sum" lay-verify="sum" autocomplete="off"  class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">币种</div>
+                                <div class="layui-input-inline">
+                                    <select name="currency" lay-filter="currency" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">汇率</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="exchange_rate" lay-verify="exchange_rate" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">结算方式</div>
+                                <div class="layui-input-inline">
+                                    <select name="settlement" lay-filter="settlement" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">结算账户</div>
+                                <div class="layui-input-inline">
+                                    <select name="account" lay-filter="account" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-bottom:0;white-space:nowrap;">
+                            <div class="layui-inline">
+                                <div class="layui-form-label">测试标准</div>
+                                <div class="layui-input-inline">
+                                    <select name="quality" lay-filter="quality" lay-search>
+                                        <option value="">请选择</option>
+                                        <option value="发物流">发物流</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">物性要求</div>
+                                <div class="layui-input-inline" style="width:468px;">
+                                    <input type="text" name="physical" lay-verify="physical" autocomplete="off"  class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">化性要求</div>
+                                <div class="layui-input-inline" style="width:468px;">
+                                    <input type="text" name="chemical"  lay-verify="cchemical"  autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-bottom:0;white-space:nowrap;float: left;">
+                            <div class="layui-inline">
+                                <div class="layui-form-label">制单机构</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="mechanism" lay-verify="mechanism" autocomplete="off"  class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline" style="position:relative;">
+                                <div class="layui-form-label">部门</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="department" lay-verify="department" autocomplete="off"  class="layui-input dif_input">
+                                </div>
+                                <!-- 部门的弹框 -->
+                                <div class="my_layer layui-card layui-anim-upbit">
+                                    <div class="layui-card-header">
+                                        <span class="code">编码</span>
+                                        <span class="content">部门</span>
+                                    </div>
+                                    <ul class="layui-card-body">
+                                        <li>
+                                            <span class="code">编码</span>
+                                            <span class="content">业务员</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-inline" style="position:relative;">
+                                <div class="layui-form-label">业务员</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="salesman" lay-verify="salesman" autocomplete="off" class="layui-input dif_input">
+                                </div>
+                                <!-- 业务员的弹框 -->
+                                <div class="my_layer layui-card layui-anim-upbit">
+                                    <div class="layui-card-header">
+                                        <span class="code">编码</span>
+                                        <span class="content">业务员</span>
+                                    </div>
+                                    <ul class="layui-card-body">
+                                        <li>
+                                            <span class="code">编码</span>
+                                            <span class="content">业务员</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">审核人</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name=" examine" lay-verify=" examine" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-form-label">制单人</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="single" lay-verify="single" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12 layui-col-sm12" id="detailed_table">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <div class="layui-btn-container" style="float:left;">
+                        <button class="layui-btn btn" id="btn_add">操作行</button>
+                        <dl class="child layui-anim-fadein layui-anim layui-anim-upbit" style="left:14px;">
+                            <dd>
+                                <a href="javascript:;">新增行</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">插入行</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">复制行</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">关联复制行</a>
+                            </dd>
+                        </dl>
+                        <button class="layui-btn layui-btn-normal">删除行</button>
+                    </div>
+                </div>
+                <div class="layui-card-body" id="dif_body">
+                    <table class="layui-hide" id="test-table-checkbox" lay-even></table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item layui-layout-admin">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left:0;text-align: center;">  
+                    <div class="btn-group" style="text-align: center;">
+                        <button class="layui-btn">审核</button>
+                        <button class="layui-btn layui-btn-normal">保存新增</button>
+                        <button class="layui-btn layui-btn-warm">保存退出</button>
+                        <button class="layui-btn layui-btn-danger">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../layuiadmin/layui/layui.js"></script>
+<script src="../../js/jquery-3.2.0.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    layui.config({
+        base: '../../../layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','form','laydate','table'],function(){
+        var $=layui.$;
+        var form=layui.form;
+        var laydate = layui.laydate;
+        var table=layui.table;
+        //执行一个laydate实例
+        laydate.render({
+        elem: '#LAY-component-form-group-date'
+        });
+        laydate.render({
+        elem: '#LAY-component-form-group-date1'
+        });
+        table.render({
+            elem: '#test-table-checkbox',
+            //height: 312,
+            height: 'full-400',   //高度最大适应
+            url: '/demo/table/user/', //数据接口
+            cellMinWidth: 120, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            cols: [[ //表头
+                {type:'numbers', fixed: 'left'},
+                {type: 'checkbox', fixed: 'left'},
+                {field:'code', title: '货品编号'},
+                {field:'code1', title: '颜色编号'},
+                {field: 'name', title: '货品名称'},
+                {field: 'color', title: '颜色'} ,
+                {field: 'specifications', title: '规格'},
+                {field: 'category', title: '货品类别'},
+                {field: 'material', title: '客户材料名称'},
+                {field: 'type', title: '型体号'},
+                {field: 'brand', title: '品牌'},
+                {field: 'light', title: '对色光源'},
+                {field:'shoot', title: '鞋型'},
+                {field: 'product', title: '产品工艺'},
+                {field: 'use', title: '使用部位'},
+                {field: 'color_fastness', title: '色牢度'} ,
+                {field: 'unit', title: '单位'},
+                {field: 'order', title: '订单数量'},
+                {field: 'number', title: '允交数量'},
+                {field: 'price', title: '单价'},
+                {field: 'sum', title: '金额'},
+                {field: 'cost', title: '参考成本'} ,
+                {field: 'delivery', title: '交货日期'},
+                {field: 'production', title: '生产日期'},
+                {field: 'shipment', title: '已出货数量'},
+                {field: 'production_num', title: '生产数量'},
+                {field: 'finishment', title: '完工数量'},
+                {field: 'weight', title: '克重'},
+                {field: 'lngredients', title: '成份'},
+            ]]
+        });
+        
+        var active={
+            customer:function(){
+                layer.open({
+                type:2,
+                title:"账户资料",
+                content:"鹿晗&关晓彤",
+                maxmin: true,  //最大最小化
+                area:['500px','480px'], //自定义弹窗的大小
+                skin:'layui-layer-molv', //设置弹窗的皮肤
+                })
+            }
+        }
+        $('.layui-input.input').on('click',function(){
+            var type=$(this).data('type');
+            active[type]?active[type].call(this):'';
+        });
+    });
+</script>
+</body>
+</html>
